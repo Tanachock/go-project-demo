@@ -1,6 +1,6 @@
 # go-crud-demo
 
-ตัวอย่าง CRUD API ด้วย Go + Echo + MongoDB จัดโครงแบบ Layered Architecture (ตามแบบ BOTNOI-API)
+ตัวอย่าง CRUD API ด้วย Go + Echo + MongoDB จัดโครงแบบ Layered Architecture
 ใช้สำหรับสอนเรื่อง Layer, Constructor / Factory, Dependency Injection และ Unit Test ด้วย Fake
 
 ## วิธีรัน
