@@ -1,0 +1,15 @@
+# ค่าตั้งค่าจริง (อาจมีรหัสผ่าน DB) — ใช้ .env.example เป็นตัวอย่างแทน
+.env
+
+# build / test output
+/bin/
+*.exe
+*.test
+*.out
+cover.out
+
+# editor / OS
+.idea/
+.vscode/
+.DS_Store
+.dist/
