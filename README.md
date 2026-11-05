@@ -240,22 +240,6 @@ main.go
 > ⚠️ ชื่อ "factory" ในที่นี้ไม่ใช่ Factory Pattern แบบตำรา (ที่เลือกว่าจะสร้าง type ไหนตามเงื่อนไข)
 > แต่เป็นที่รวม Constructor + Dependency Injection ของ package
 
-### ต่างจาก BOTNOI-API อย่างไร
-
-BOTNOI ใช้ `NewAPIService(db, ...)` ที่รับ db แล้ว **สร้าง storage เองข้างใน** ส่วนโปรเจกต์นี้ **รับ storage เข้ามา**
-
-| | รับ `db` (แบบ BOTNOI) | รับ storage (โปรเจกต์นี้) |
-|---|---|---|
-| main.go | สั้น | ยาวขึ้นตามจำนวน storage |
-| Service import mongo | ต้อง import | ไม่ต้อง |
-| Test ใช้ constructor ได้ | ไม่ได้ (ต้องมี Mongo จริง) | ได้ |
-| เปลี่ยนหรือครอบ storage (memory, cache, logging) | ต้องแก้ service | แก้แค่ main.go |
-
-แบบรับ db เป็นทางลัดที่สะดวกเมื่อ service ใช้ storage หลายตัว
-แต่ถ้า service ต้องใช้ storage จำนวนมาก แปลว่า service ตัวนั้นทำงานมากเกินไป ควรแยกตาม module แทน
-
----
-
 ## ทำไม `internal/` แต่ `models/` และ `storage/` อยู่ข้างนอก
 
 - **`internal/`** เป็นกฎของ Go: package ข้างในโฟลเดอร์นี้ **import จากโปรเจกต์อื่นไม่ได้** จึงเหมาะกับโค้ดที่ไม่ต้องการให้ใครเอาไปใช้
